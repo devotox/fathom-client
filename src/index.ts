@@ -64,6 +64,8 @@ const flushQueue = (): void => {
 };
 
 export const load = (siteId: string, opts?: LoadOptions): void => {
+  if (typeof document === 'undefined') { return; }
+  
   let tracker = document.createElement('script');
   let firstScript = document.getElementsByTagName('script')[0];
 
